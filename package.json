@@ -1,0 +1,24 @@
+{
+  "name": "tasktrackercli",
+  "version": "1.0.0",
+  "description": "Task tracker is a project used to track and manage your tasks.",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SantiagoRcp/TaskTracKerCLI.git"
+  },
+  "keywords": [
+    "task",
+    "tracker"
+  ],
+  "author": "SantiagoRcp",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SantiagoRcp/TaskTracKerCLI/issues"
+  },
+  "homepage": "https://github.com/SantiagoRcp/TaskTracKerCLI#readme"
+}
