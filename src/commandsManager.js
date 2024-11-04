@@ -1,14 +1,13 @@
 import readCommand from "./readCommand.js";
-import { color } from "./auxiliaries.js";
+import {color, splitCommand} from "./auxiliaries.js";
 import addTask from "./add.js";
 import help from "./help.js";
+import updateTask from "./update.js";
+import {taskAllList} from "./listTask.js";
 
 export function commandsManager() {
   readCommand((command) => {
-    const getCommand = command.split(" ");
-    const comm = getCommand[0];
-    getCommand.shift();
-    const parameters = getCommand.join(" ");
+    const [comm, parameters] = splitCommand(command);
 
     switch (comm) {
       case "add":
@@ -16,7 +15,16 @@ export function commandsManager() {
         commandsManager();
         break;
 
-      case "":
+      case "update":
+        const [id, taskUpdate] = splitCommand(parameters);
+        const isSave =updateTask(id, taskUpdate);
+        const message = !isSave ? `${color.error} Task No Found ${color.reset}` : `${color.cyan}Task Update Successfully ${color.reset}`;
+        console.log(message);
+        commandsManager();
+        break;
+
+      case "list-all":
+        taskAllList();
         break;
 
       case "help":

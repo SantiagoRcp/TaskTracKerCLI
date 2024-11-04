@@ -7,6 +7,15 @@ const color= {
     white: "\x1b[37m",
 }
 
+function splitCommand(command) {
+    const getCommand = command.split(" ");
+    const comm = getCommand[0];
+    getCommand.shift();
+    const parameters = getCommand.join(" ");
+    return [comm, parameters];
+}
+
 export  {
-    color
+    color,
+    splitCommand,
 }

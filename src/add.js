@@ -1,6 +1,6 @@
 import { writeFileSync } from "node:fs";
 import { color } from "./auxiliaries.js";
-import { readFileTasks } from "./readFileTasks.js";
+import readFileTasks from "./readFileTasks.js";
 
 let tasks = readFileTasks();
 
@@ -16,7 +16,7 @@ export default function addTask(task) {
   const newTask = {
     id,
     task,
-    status: "added",
+    status: "ToDo",
     createdAt: new Date().toLocaleDateString(),
     updatedAt: new Date().toLocaleDateString(),
   };
