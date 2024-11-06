@@ -4,9 +4,8 @@ import {color} from "./auxiliaries.js";
 export function saveTask(tasks) {
     try {
         writeFileSync('tasks.json', JSON.stringify(tasks))
-        return true;
+        return {error: false, message: `${color.green} Task saved successfully ${color.reset}`};
     } catch (error) {
-        console.error(`${color.error} Error: \n${error} ${color.reset}`);
-        return false;
+        return {error:true, message:`\n${color.error} Error: ${error} ${color.reset}`};
     }
 }
